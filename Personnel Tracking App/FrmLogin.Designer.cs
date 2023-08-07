@@ -103,7 +103,7 @@
             this.Controls.Add(this.txtUserNo);
             this.Controls.Add(this.UserNo);
             this.Name = "FrmLogin";
-            this.Text = "Form1";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
