@@ -1,0 +1,7 @@
+C:\Users\ethan\source\repos\Personnel Tracking App2\DAL\bin\Release\DAL.dll.config
+C:\Users\ethan\source\repos\Personnel Tracking App2\DAL\bin\Release\DAL.dll
+C:\Users\ethan\source\repos\Personnel Tracking App2\DAL\bin\Release\DAL.pdb
+C:\Users\ethan\source\repos\Personnel Tracking App2\DAL\obj\Release\DAL.csproj.AssemblyReference.cache
+C:\Users\ethan\source\repos\Personnel Tracking App2\DAL\obj\Release\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ethan\source\repos\Personnel Tracking App2\DAL\obj\Release\DAL.dll
+C:\Users\ethan\source\repos\Personnel Tracking App2\DAL\obj\Release\DAL.pdb

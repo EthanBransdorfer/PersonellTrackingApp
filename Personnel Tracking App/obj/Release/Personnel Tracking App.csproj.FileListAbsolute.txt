@@ -1,0 +1,30 @@
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\bin\Release\Personnel Tracking App.exe.config
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\bin\Release\Personnel Tracking App.exe
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\bin\Release\Personnel Tracking App.pdb
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\bin\Release\BLL.dll
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\bin\Release\DAL.dll
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\bin\Release\BLL.pdb
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\bin\Release\DAL.pdb
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\bin\Release\DAL.dll.config
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel Tracking App.csproj.AssemblyReference.cache
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel Tracking App.csproj.SuggestedBindingRedirects.cache
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel_Tracking_App.FrmDepartment.resources
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel_Tracking_App.FrmDepartmentList.resources
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel_Tracking_App.FrmEmployee.resources
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel_Tracking_App.FrmEmployeeList.resources
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel_Tracking_App.FrmLogin.resources
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel_Tracking_App.FrmMain.resources
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel_Tracking_App.FrmPermission.resources
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel_Tracking_App.FrmPermissionList.resources
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel_Tracking_App.FrmPosition.resources
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel_Tracking_App.FrmPositionList.resources
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel_Tracking_App.FrmSalary.resources
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel_Tracking_App.FrmSalaryList.resources
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel_Tracking_App.FrmTask.resources
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel_Tracking_App.FrmTaskList.resources
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel_Tracking_App.Properties.Resources.resources
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel Tracking App.csproj.GenerateResource.cache
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel Tracking App.csproj.CoreCompileInputs.cache
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel Tracking App.csproj.CopyComplete
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel Tracking App.exe
+C:\Users\ethan\source\repos\Personnel Tracking App2\Personnel Tracking App\obj\Release\Personnel Tracking App.pdb

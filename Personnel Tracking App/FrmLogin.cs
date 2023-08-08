@@ -21,14 +21,18 @@ namespace Personnel_Tracking_App
         {
             e.Handled = General.isNumber(e);
         }
-        private void btnEnter_Click(object sender, EventArgs e)
-        {
-
-        }
+  
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            FrmMain frm = new FrmMain();
+            this.Hide();
+            frm.ShowDialog();
         }
     }
 }

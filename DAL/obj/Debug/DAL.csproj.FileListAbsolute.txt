@@ -1,6 +1,7 @@
-C:\Users\ethan\source\repos\Personnel Tracking App\DAL\bin\Debug\DAL.dll
-C:\Users\ethan\source\repos\Personnel Tracking App\DAL\bin\Debug\DAL.pdb
-C:\Users\ethan\source\repos\Personnel Tracking App\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
-C:\Users\ethan\source\repos\Personnel Tracking App\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
-C:\Users\ethan\source\repos\Personnel Tracking App\DAL\obj\Debug\DAL.dll
-C:\Users\ethan\source\repos\Personnel Tracking App\DAL\obj\Debug\DAL.pdb
+C:\Users\ethan\source\repos\Personnel Tracking App2\DAL\bin\Debug\DAL.dll.config
+C:\Users\ethan\source\repos\Personnel Tracking App2\DAL\bin\Debug\DAL.dll
+C:\Users\ethan\source\repos\Personnel Tracking App2\DAL\bin\Debug\DAL.pdb
+C:\Users\ethan\source\repos\Personnel Tracking App2\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\ethan\source\repos\Personnel Tracking App2\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ethan\source\repos\Personnel Tracking App2\DAL\obj\Debug\DAL.dll
+C:\Users\ethan\source\repos\Personnel Tracking App2\DAL\obj\Debug\DAL.pdb
