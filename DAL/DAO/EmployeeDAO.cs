@@ -20,5 +20,11 @@ namespace DAL.DAO
                 throw ex;
             }
         }
+
+        public static List<EMPLOYEE> GetUsers(int userNo)
+        {
+            return db.EMPLOYEEs.Where(x =>  x.UserNo == userNo).ToList();
+        }
+
     }
 }

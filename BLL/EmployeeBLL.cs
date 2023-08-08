@@ -22,5 +22,19 @@ namespace BLL
         {
             EmployeeDAO.AddEmployee(employee);
         }
+
+        public static bool isUnique(int userNo)
+        {
+            List<EMPLOYEE> list = EmployeeDAO.GetUsers(userNo);
+            if (list.Count > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
     }
 }

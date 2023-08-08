@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BLL;
 using DAL;
 using DAL.DTO;
+using System.IO;
 
 namespace Personnel_Tracking_App
 {
@@ -30,6 +31,10 @@ namespace Personnel_Tracking_App
             if(txtUserNo.Text.Trim()=="")
             {
                 MessageBox.Show("User no is empty.");
+            }
+            else if (!EmployeeBLL.isUnique(Convert.ToInt32(txtUserNo.Text)))
+            {
+                MessageBox.Show("User no is already taken.");
             }
             else if(txtPassword.Text.Trim()=="")
             {
@@ -74,6 +79,23 @@ namespace Personnel_Tracking_App
                 employee.BirthDay = dateTimePicker1.Value;
                 employee.ImagePath = fileName;
                 EmployeeBLL.AddEmployee(employee);
+                File.Copy(txtImagePath.Text, @"images\\" + fileName);
+                MessageBox.Show("Employee was added.");
+                txtUserNo.Clear();
+                txtPassword.Clear();
+                txtSalary.Clear();
+                txtAddress.Clear();
+                txtSurname.Clear();
+                txtName.Clear();
+                chAdmin.Checked = false;
+                txtImagePath.Clear();
+                pictureBox1.Image = null;
+                combofull = false;
+                cmbDepartment.SelectedIndex = -1;
+                cmbPosition.DataSource = dto.Positions;
+                cmbPosition.SelectedIndex = -1;
+                combofull = true;
+                dateTimePicker1.Value = DateTime.Today;
 
             }
         }
@@ -117,7 +139,27 @@ namespace Personnel_Tracking_App
                 pictureBox1.Load(openFileDialog1.FileName);
                 txtImagePath.Text = openFileDialog1.FileName;
                 string Unique = Guid.NewGuid().ToString();
-                fileName += openFileDialog1.SafeFileName;
+                fileName += Unique + openFileDialog1.SafeFileName;
+            }
+        }
+        bool isUnique = false; //Unique user name check
+        private void btnCheck_Click(object sender, EventArgs e)
+        {
+            if (txtUserNo.Text.Trim() == "")
+            {
+                MessageBox.Show("User no is empty.");
+            }
+            else
+            {
+                isUnique = EmployeeBLL.isUnique(Convert.ToInt32(txtUserNo.Text));
+                if (!isUnique)
+                {
+                    MessageBox.Show("User no is already taken.");
+                }
+                else
+                {
+                    MessageBox.Show("User no is available.");
+                }
             }
         }
     }
