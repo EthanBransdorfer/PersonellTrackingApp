@@ -13,7 +13,7 @@ namespace BLL
     {
         public static void AddDepartment(DEPARTMENT department)
         {
-            DAL.DAO.DepartmentDAO.AddDepartment(department);
+            DepartmentDAO.AddDepartment(department);
         }
 
         public static List<DEPARTMENT> GetDepartments()

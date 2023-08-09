@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BLL;
+using DAL;
 namespace Personnel_Tracking_App
 {
     public partial class FrmLogin : Form
@@ -21,7 +22,7 @@ namespace Personnel_Tracking_App
         {
             e.Handled = General.isNumber(e);
         }
-  
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -30,9 +31,29 @@ namespace Personnel_Tracking_App
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            FrmMain frm = new FrmMain();
-            this.Hide();
-            frm.ShowDialog();
+            if (txtUserNo.Text == "" || txtPassword.Text == "")
+            {
+                MessageBox.Show("Please fill user no and password.");
+            }
+            else
+            {
+                List<EMPLOYEE> employeeList = EmployeeBLL.GetEmployees(Convert.ToInt32(txtUserNo.Text), txtPassword.Text);
+                if (employeeList.Count == 0)
+                {
+                    MessageBox.Show("Invalid user no or password.");
+                }
+                else
+                {
+                    EMPLOYEE employee = new EMPLOYEE();
+                    employee = employeeList.First();
+                    UserStatic.EmployeeID = employee.ID;
+                    UserStatic.UserNo = employee.UserNo;
+                    UserStatic.isAdmin = employee.isAdmin;
+                    FrmMain frm = new FrmMain();
+                    this.Hide();
+                    frm.ShowDialog();
+                }
+            }
         }
     }
 }
