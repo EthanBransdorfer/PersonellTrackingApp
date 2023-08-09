@@ -33,7 +33,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbTaskState = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbDeliveryDate = new System.Windows.Forms.RadioButton();
             this.rbStartDate = new System.Windows.Forms.RadioButton();
@@ -83,7 +83,7 @@
             this.panel3.Controls.Add(this.btnClear);
             this.panel3.Controls.Add(this.btnSearch);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.cmbTaskState);
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Controls.Add(this.dpEnd);
             this.panel3.Controls.Add(this.dpStart);
@@ -104,6 +104,7 @@
             this.btnClear.TabIndex = 4;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnSearch
             // 
@@ -113,6 +114,7 @@
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label8
             // 
@@ -124,13 +126,13 @@
             this.label8.TabIndex = 32;
             this.label8.Text = "Task State";
             // 
-            // comboBox1
+            // cmbTaskState
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(106, 87);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 2;
+            this.cmbTaskState.FormattingEnabled = true;
+            this.cmbTaskState.Location = new System.Drawing.Point(106, 87);
+            this.cmbTaskState.Name = "cmbTaskState";
+            this.cmbTaskState.Size = new System.Drawing.Size(200, 21);
+            this.cmbTaskState.TabIndex = 2;
             // 
             // groupBox1
             // 
@@ -261,6 +263,7 @@
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(143, 21);
             this.cmbDepartment.TabIndex = 3;
+            this.cmbDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbDepartment_SelectedIndexChanged);
             // 
             // txtSurname
             // 
@@ -378,6 +381,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 177);
@@ -430,7 +434,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbDepartment;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbTaskState;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rbDeliveryDate;
         private System.Windows.Forms.RadioButton rbStartDate;
