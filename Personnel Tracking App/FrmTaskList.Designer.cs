@@ -374,6 +374,7 @@
             this.btnNew.TabIndex = 1;
             this.btnNew.Text = "New";
             this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // dataGridView1
             // 

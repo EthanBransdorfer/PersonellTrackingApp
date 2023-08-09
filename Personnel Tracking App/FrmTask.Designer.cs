@@ -42,7 +42,7 @@
             this.txtUserNo = new System.Windows.Forms.TextBox();
             this.UserNo = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbTaskState = new System.Windows.Forms.ComboBox();
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtContent = new System.Windows.Forms.TextBox();
@@ -66,12 +66,14 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 116);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(200, 334);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             // 
             // panel2
             // 
@@ -102,6 +104,7 @@
             this.cmbPosition.Name = "cmbPosition";
             this.cmbPosition.Size = new System.Drawing.Size(143, 21);
             this.cmbPosition.TabIndex = 26;
+            this.cmbPosition.SelectedIndexChanged += new System.EventHandler(this.cmbPosition_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -120,6 +123,7 @@
             this.cmbDepartment.Name = "cmbDepartment";
             this.cmbDepartment.Size = new System.Drawing.Size(143, 21);
             this.cmbDepartment.TabIndex = 25;
+            this.cmbDepartment.SelectedIndexChanged += new System.EventHandler(this.cmbDepartment_SelectedIndexChanged);
             // 
             // txtSurname
             // 
@@ -185,13 +189,13 @@
             this.label8.TabIndex = 34;
             this.label8.Text = "Task State";
             // 
-            // comboBox1
+            // cmbTaskState
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(109, 90);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(143, 21);
-            this.comboBox1.TabIndex = 33;
+            this.cmbTaskState.FormattingEnabled = true;
+            this.cmbTaskState.Location = new System.Drawing.Point(109, 90);
+            this.cmbTaskState.Name = "cmbTaskState";
+            this.cmbTaskState.Size = new System.Drawing.Size(143, 21);
+            this.cmbTaskState.TabIndex = 33;
             // 
             // txtTitle
             // 
@@ -260,7 +264,7 @@
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbTaskState);
             this.Controls.Add(this.txtSurname);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtName);
@@ -270,6 +274,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FrmTask";
             this.Text = "Task";
+            this.Load += new System.EventHandler(this.FrmTask_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -295,7 +300,7 @@
         private System.Windows.Forms.TextBox txtUserNo;
         private System.Windows.Forms.Label UserNo;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbTaskState;
         private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtContent;
