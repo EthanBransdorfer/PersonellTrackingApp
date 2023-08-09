@@ -18,8 +18,8 @@ namespace DAL.DTO
         public int PositionID { get; set; }
         public string MonthName { get; set; }
         public int SalaryYear { get; set; }
-        public int MonthID { get; set; }
         public int SalaryAmount { get; set; }
+        public int MonthID { get; set; }
         public int SalaryID { get; set; }
         public int OldSalary {get; set; }
     }
