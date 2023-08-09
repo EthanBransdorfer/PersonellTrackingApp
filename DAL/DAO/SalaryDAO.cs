@@ -67,5 +67,21 @@ namespace DAL.DAO
             }
             return salaryList;
         }
+
+        public static void UpdateSalary(SALARY update)
+        {
+            try
+            {
+                SALARY sl = db.SALARies.First(x => x.ID == update.ID);
+                sl.Amount = update.Amount;
+                sl.Year = update.Year;
+                sl.MonthID = update.MonthID;
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
     }
 }

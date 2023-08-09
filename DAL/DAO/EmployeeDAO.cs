@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DAL.DAO
 {
@@ -87,5 +88,52 @@ namespace DAL.DAO
             return db.EMPLOYEEs.Where(x =>  x.UserNo == userNo).ToList();
         }
 
+        public static void UpdateEmployee(int employeeID, int amount)
+        {
+            try
+            {
+                EMPLOYEE employee = db.EMPLOYEEs.First(x => x.ID == employeeID);
+                employee.Salary = amount;
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
+        public static void UpdateEmployee(EMPLOYEE employee)
+        {
+            try
+            {
+                EMPLOYEE emp = db.EMPLOYEEs.First(x => x.ID == employee.ID);
+                emp.UserNo = employee.UserNo;
+                emp.Name = employee.Name;
+                emp.Surname = employee.Surname;
+                emp.Password = employee.Password;
+                emp.isAdmin = employee.isAdmin;
+                emp.BirthDay = employee.BirthDay;
+                emp.Address = employee.Address;
+                emp.DepartmentID = employee.DepartmentID;
+                emp.PositionID = employee.PositionID;
+                emp.ImagePath = employee.ImagePath;
+                emp.Salary = employee.Salary;
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw (ex);
+            }
+        }
+
+        public static void UpdateEmployee(POSITION position)
+        {
+            List<EMPLOYEE> list = db.EMPLOYEEs.Where(x => x.ID == position.ID).ToList();
+            foreach (var item in list)
+            {
+                item.DepartmentID = position.DepartmentID;
+            }
+            db.SubmitChanges();
+        }
     }
 }
