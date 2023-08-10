@@ -64,7 +64,7 @@ namespace Personnel_Tracking_App
         private void FrmDepartmentList_Load(object sender, EventArgs e)
         {
             
-            list = BLL.DepartmentBLL.GetDepartments();
+            list = DepartmentBLL.GetDepartments();
             dataGridView1.DataSource = list;
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[1].HeaderText = "Department Name";
@@ -75,6 +75,19 @@ namespace Personnel_Tracking_App
         {
             detail.ID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
             detail.DepartmentName = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult = MessageBox.Show("Are you sure to delete this task", "Warning", MessageBoxButtons.YesNo);
+            if (DialogResult == DialogResult.Yes)
+            {
+                DepartmentBLL.DeleteDepartment(detail.ID);
+                MessageBox.Show("Position was deleted.");
+
+                list = DepartmentBLL.GetDepartments();
+                dataGridView1.DataSource = list;
+            }
         }
     }
 }

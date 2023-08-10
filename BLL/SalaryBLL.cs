@@ -21,6 +21,11 @@ namespace BLL
             }
         }
 
+        public static void DeleteSalary(int salaryID)
+        {
+            SalaryDAO.DeleteSalary(salaryID);
+        }
+
         public static SalaryDTO GetALL()
         {
             SalaryDTO salarydto = new SalaryDTO();

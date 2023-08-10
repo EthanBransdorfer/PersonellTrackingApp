@@ -23,6 +23,20 @@ namespace DAL.DAO
             }
         }
 
+        public static void DeleteEmployee(int employeeID)
+        {
+            try
+            {
+                EMPLOYEE employee = db.EMPLOYEEs.First(e => e.ID == employeeID);
+                db.EMPLOYEEs.DeleteOnSubmit(employee);
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public static List<EmployeeDetailDTO> GetEmployees()
         {
             List<EmployeeDetailDTO> employeeList = new List<EmployeeDetailDTO>();

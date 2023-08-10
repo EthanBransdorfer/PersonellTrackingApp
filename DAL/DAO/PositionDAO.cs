@@ -22,6 +22,21 @@ namespace DAL.DAO
             }
         }
 
+        public static void DeletePosition(int iD)
+        {
+            try
+            {
+                POSITION pos = db.POSITIONs.First(x => x.ID == iD);
+                db.POSITIONs.DeleteOnSubmit(pos); //SQL Trigger to delete associated employees with position
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
         public static List<PositionDTO> GetPositions()
         {
             try

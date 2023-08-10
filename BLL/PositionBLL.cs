@@ -17,6 +17,11 @@ namespace BLL
             PositionDAO.AddPosition(position);
         }
 
+        public static void DeletePosition(int iD)
+        {
+            PositionDAO.DeletePosition(iD);
+        }
+
         public static List<PositionDTO> GetPositions()
         {
             return PositionDAO.GetPositions();

@@ -165,5 +165,18 @@ namespace Personnel_Tracking_App
             detail.EmployeeID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString());
 
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult = MessageBox.Show("Are you sure to delete this task", "Warning", MessageBoxButtons.YesNo);
+            if (DialogResult == DialogResult.Yes)
+            {
+                EmployeeBLL.DeleteEmployee(detail.EmployeeID);
+                MessageBox.Show("Employee was deleted.");
+                FillAllData();
+                CleanFilters();
+            }
+
+        }
     }
 }

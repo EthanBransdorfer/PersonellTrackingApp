@@ -196,5 +196,17 @@ namespace Personnel_Tracking_App
             detail.MonthID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[11].Value);
             detail.SalaryID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[12].Value);
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult = MessageBox.Show("Are you sure to delete this task", "Warning", MessageBoxButtons.YesNo);
+            if (DialogResult == DialogResult.Yes)
+            {
+                SalaryBLL.DeleteSalary(detail.SalaryID);
+                MessageBox.Show("Salary was deleted.");
+                FillAllData();
+                CleanFilters();
+            }
+        }
     }
 }
