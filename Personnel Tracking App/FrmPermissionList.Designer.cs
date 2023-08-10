@@ -44,7 +44,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlForAdmin = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbPosition = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,10 +63,11 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnExport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnlForAdmin.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +75,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.pnlForAdmin);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -83,6 +84,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnExport);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.cmbState);
             this.panel4.Controls.Add(this.btnClear);
@@ -233,23 +235,23 @@
             this.label3.TabIndex = 33;
             this.label3.Text = "Permission Date";
             // 
-            // panel3
+            // pnlForAdmin
             // 
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.cmbPosition);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.cmbDepartment);
-            this.panel3.Controls.Add(this.txtSurname);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.txtName);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.txtUserNo);
-            this.panel3.Controls.Add(this.UserNo);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(277, 156);
-            this.panel3.TabIndex = 0;
+            this.pnlForAdmin.Controls.Add(this.label5);
+            this.pnlForAdmin.Controls.Add(this.cmbPosition);
+            this.pnlForAdmin.Controls.Add(this.label6);
+            this.pnlForAdmin.Controls.Add(this.cmbDepartment);
+            this.pnlForAdmin.Controls.Add(this.txtSurname);
+            this.pnlForAdmin.Controls.Add(this.label2);
+            this.pnlForAdmin.Controls.Add(this.txtName);
+            this.pnlForAdmin.Controls.Add(this.label1);
+            this.pnlForAdmin.Controls.Add(this.txtUserNo);
+            this.pnlForAdmin.Controls.Add(this.UserNo);
+            this.pnlForAdmin.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlForAdmin.Location = new System.Drawing.Point(0, 0);
+            this.pnlForAdmin.Name = "pnlForAdmin";
+            this.pnlForAdmin.Size = new System.Drawing.Size(277, 156);
+            this.pnlForAdmin.TabIndex = 0;
             // 
             // label5
             // 
@@ -425,6 +427,16 @@
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(335, 128);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(143, 25);
+            this.btnExport.TabIndex = 34;
+            this.btnExport.Text = "Export to Excel";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // FrmPermissionList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,8 +453,8 @@
             this.panel4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pnlForAdmin.ResumeLayout(false);
+            this.pnlForAdmin.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -460,7 +472,7 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnlForAdmin;
         private System.Windows.Forms.Button btnDisapprove;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbPosition;
@@ -486,5 +498,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmbState;
+        private System.Windows.Forms.Button btnExport;
     }
 }

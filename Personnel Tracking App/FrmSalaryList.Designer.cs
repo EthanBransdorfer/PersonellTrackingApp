@@ -59,6 +59,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnExport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -79,6 +80,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnExport);
             this.panel4.Controls.Add(this.btnClear);
             this.panel4.Controls.Add(this.btnSearch);
             this.panel4.Controls.Add(this.groupBox1);
@@ -381,6 +383,16 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_RowEnter);
             // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(273, 97);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(95, 35);
+            this.btnExport.TabIndex = 55;
+            this.btnExport.Text = "Export to Excel";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // FrmSalaryList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,5 +450,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Button btnExport;
     }
 }

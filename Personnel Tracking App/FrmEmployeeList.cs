@@ -178,5 +178,10 @@ namespace Personnel_Tracking_App
             }
 
         }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            ExportToExcel.ExcelExport(dataGridView1);
+        }
     }
 }

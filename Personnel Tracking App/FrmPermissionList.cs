@@ -50,6 +50,10 @@ namespace Personnel_Tracking_App
             {
                 MessageBox.Show("Please select a permission from the table.");
             }
+            else if (detail.State == PermissionStates.Approved || detail.State == PermissionStates.Disapproved)
+            {
+                MessageBox.Show("You can not update any approved or disapproved permission");
+            }
             else
             {
                 FrmPermission frm = new FrmPermission();
@@ -67,6 +71,10 @@ namespace Personnel_Tracking_App
         void FillAllData()
         {
             dto = PermissionBLL.GetALL();
+            if (!UserStatic.isAdmin)
+            {
+                dto.Permissions = dto.Permissions.Where(x => x.EmployeeID == UserStatic.EmployeeID).ToList();
+            }
             dataGridView1.DataSource = dto.Permissions;
             combofull = false;
             cmbDepartment.DataSource = dto.Departments;
@@ -103,6 +111,15 @@ namespace Personnel_Tracking_App
             dataGridView1.Columns[13].Visible = false;
             dataGridView1.Columns[14].HeaderText = "Explanation";
             dataGridView1.Columns[15].Visible = false;
+            if (!UserStatic.isAdmin)
+            {
+                pnlForAdmin.Visible = false;
+                btnApprove.Hide();
+                btnDisapprove.Hide();
+                btnDelete.Hide();
+                btnClose.Location = btnDelete.Location;
+
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -216,6 +233,11 @@ namespace Personnel_Tracking_App
                     CleanFilters();
                 }
             }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            ExportToExcel.ExcelExport(dataGridView1);
         }
     }
 }

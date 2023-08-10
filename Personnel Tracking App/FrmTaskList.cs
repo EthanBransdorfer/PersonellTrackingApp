@@ -48,6 +48,10 @@ namespace Personnel_Tracking_App
         void FillAllData()
         {
             dto = TaskBLL.GetALL();
+            if(!UserStatic.isAdmin)
+            {
+                 dto.Tasks = dto.Tasks.Where(x => x.EmployeeID == UserStatic.EmployeeID).ToList();
+            }
             dataGridView1.DataSource = dto.Tasks;
             combofull = false;
             cmbDepartment.DataSource = dto.Departments;
@@ -85,8 +89,19 @@ namespace Personnel_Tracking_App
             dataGridView1.Columns[13].Visible = false;
             dataGridView1.Columns[14].Visible = false;
 
-            
-            //pnlForAdmin.Hide();
+            if(!UserStatic.isAdmin)
+            {
+                btnNew.Visible = false;
+                btnDelete.Visible = false;
+                btnUpdate.Visible = false;
+                btnClose.Location = btnDelete.Location;
+                btnApprove.Location = btnUpdate.Location;                
+                pnlForAdmin.Hide();
+                btnApprove.Text = "Delivery";
+            }
+
+
+
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -200,6 +215,38 @@ namespace Personnel_Tracking_App
             detail.TaskStateID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[7].Value);
             detail.TaskID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[13].Value);
             detail.EmployeeID = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[8].Value);
+        }
+
+        private void btnApprove_Click(object sender, EventArgs e)
+        {
+            if (UserStatic.isAdmin && detail.TaskStateID == TaskStates.OnEmployee && detail.EmployeeID != UserStatic.EmployeeID)
+            {
+                MessageBox.Show("Employee must deliver task before approval");
+            }
+            else if (UserStatic.isAdmin && detail.TaskStateID == TaskStates.Approved)
+            {
+                MessageBox.Show("This task is already approved");
+            }
+            else if (!UserStatic.isAdmin && detail.TaskStateID == TaskStates.Delivered)
+            {
+                MessageBox.Show("This task is already delivered");
+            }
+            else if (!UserStatic.isAdmin && detail.TaskStateID == TaskStates.Approved)
+            {
+                MessageBox.Show("This task is already approved");
+            }
+            else
+            {
+                TaskBLL.ApproveTask(detail.TaskID, UserStatic.isAdmin);
+                MessageBox.Show("Task updated.");
+                FillAllData();
+                CleanFilters();
+            }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            ExportToExcel.ExcelExport(dataGridView1);
         }
     }
 }

@@ -67,6 +67,10 @@ namespace Personnel_Tracking_App
         void FillAllData()
         {
             dto = SalaryBLL.GetALL();
+            if (!UserStatic.isAdmin)
+            {
+                dto.Salaries = dto.Salaries.Where(x => x.EmployeeID == UserStatic.EmployeeID).ToList();
+            }
             dataGridView1.DataSource = dto.Salaries;
             combofull = false;
             cmbDepartment.DataSource = dto.Departments;
@@ -101,6 +105,14 @@ namespace Personnel_Tracking_App
             dataGridView1.Columns[11].Visible = false;
             dataGridView1.Columns[12].Visible = false;
             dataGridView1.Columns[13].Visible = false;
+            if (!UserStatic.isAdmin)
+            {
+                btnUpdate.Hide();
+                btnDelete.Hide();
+                btnNew.Location = btnUpdate.Location;
+                btnClose.Location = btnDelete.Location;
+                pnlForAdmin.Hide();
+            }
         }
 
         private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
@@ -207,6 +219,11 @@ namespace Personnel_Tracking_App
                 FillAllData();
                 CleanFilters();
             }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            ExportToExcel.ExcelExport(dataGridView1);
         }
     }
 }
